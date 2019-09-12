@@ -3,20 +3,20 @@ from netCDF4 import Dataset
 #import numpy as np
 
 # Loading dataset
-fh = Dataset('data.nc')
-#print(fh.dimensions.keys())
-#print(fh.variables.keys())
-#print(fh.variables['precip'])
+dataset = Dataset('data.nc')
+#print(dataset.dimensions.keys())
+#print(dataset.variables.keys())
+#print(dataset.variables['precip'])
 
 # Getting values
-lons = fh.variables['lon'][:]
-lats = fh.variables['lat'][:]
-var = fh.variables['precip'][:]
-var_units = fh.variables['precip'].long_name
+lons = dataset.variables['lon'][:]
+lats = dataset.variables['lat'][:]
+var = dataset.variables['precip'][:]
+var_units = dataset.variables['precip'].long_name
 #print(var)
 
 # Close file
-fh.close()
+dataset.close()
 
 # Plot map from netCDF data
 import matplotlib.pyplot as plt
